@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+@import './_table-mixin.scss';
+
+@include mat-core();
+
+$theme: mat-light-theme(mat-palette($mat-blue), mat-palette($mat-green));
+
+.custom-light-theme {
+  @include angular-material-theme($theme);
+  @include table-mixin($theme)
+}

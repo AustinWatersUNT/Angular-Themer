@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@mixin table-mixin($theme, $use-primary: false) {
+
+   $color: map-get($theme, if($use-primary, primary, accent));
+   $color-contrast: map-get($color, contrast);
+   $is-dark-theme: map-get($theme, is-dark);
+   $warn-color: map-get($theme, warn);
+
+  th, td {
+    padding: 10px;
+    border: 1px solid if($is-dark-theme, white, black)
+  }
+  td:first-child {
+    text-align: center;
+  }
+  td {
+    text-align: center;
+    min-width: 50px;
+  }
+
+  td:hover {
+    background-color: mat-color($warn-color, 500);
+  }
+
+  tbody > tr:nth-child(even) {
+    background-color: mat-color($color, if($is-dark-theme, 700, 100));
+    color: mat-color($color-contrast, if($is-dark-theme, 700, 100));
+  }
+
+  thead > tr {
+    background-color: mat-color($color);
+    color: mat-color($color-contrast, 500);
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+}

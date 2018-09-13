@@ -1,0 +1,32 @@
+@import "./sync1-theme.scss";
+@import "./sync1-mixin-theme.scss";
+@import "./custom-light-theme.scss";
+@import './_table-mixin.scss';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Prebuilt Themes
+$deeppurple-amber: mat-light-theme(mat-palette($mat-deep-purple), mat-palette($mat-amber));
+.deeppurple-amber {
+  @include angular-material-theme($deeppurple-amber);
+  @include table-mixin($deeppurple-amber);
+}
+
+$indigo-pink: mat-light-theme(mat-palette($mat-indigo), mat-palette($mat-pink));
+.indigo-pink {
+  @include angular-material-theme($indigo-pink);
+  @include table-mixin($indigo-pink);
+}
+
+$pink-bluegrey: mat-dark-theme(mat-palette($mat-pink), mat-palette($mat-blue-grey));
+.pink-bluegrey {
+  @include angular-material-theme($pink-bluegrey);
+  @include table-mixin($pink-bluegrey);
+}
+
+$purple-green: mat-dark-theme(mat-palette($mat-purple), mat-palette($mat-green));
+.purple-green {
+  @include angular-material-theme($purple-green);
+  @include table-mixin($purple-green);
+}

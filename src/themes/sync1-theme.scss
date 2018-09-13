@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@import './_sync1-variables';
+@import './_table-mixin.scss';
+
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/#tools-for-picking-colors
+$sync1-primary: mat-palette($sync1-blue);
+$sync1-accent:  mat-palette($sync1-gray);
+$sync1-warn:    mat-palette($sync1-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$sync1-theme:  (
+  primary: $sync1-primary,
+  accent: $sync1-accent,
+  warn: $sync1-warn,
+  is-dark: false,
+  foreground: $mat-light-theme-foreground,
+  background: $sync1-background
+);
+
+.sync1-theme {
+  @include angular-material-theme($sync1-theme);
+  @include table-mixin($sync1-theme);
+}
+

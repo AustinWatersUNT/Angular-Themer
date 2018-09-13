@@ -1,0 +1,121 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// https://www.w3schools.com/colors/colors_picker.asp
+// http://colormind.io/
+$sync1-blue: (
+    50: #eff1f6,
+    100: #7e8fb4,
+    200: #6e81aa,
+    300: #5e73a1,
+    400: #556891,
+    500: #54668e,
+    600: #08090a,
+    700: #425170,
+    800: #040505,
+    900: #2f3a50,
+    A100: #8f9dbd,
+    A200: #6e81aa,
+    A400: #556891,
+    A700: #425170,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: white,
+        A700: white,
+    )
+);
+
+$sync1-gray: (
+    50: #c3ced5,
+    100: #c3ced5,
+    200: #6e81aa,
+    300: #5e73a1,
+    400: #556891,
+    500: #7f96a5,
+    600: #121314,
+    700: #425170,
+    800: #040505,
+    900: #2f3a50,
+    A100: #8f9dbd,
+    A200: #6e81aa,
+    A400: #556891,
+    A700: #425170,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: white,
+        A700: white,
+    )
+);
+
+$sync1-red: (
+    50: #e9b8af,
+    100: #e4a69b,
+    200: #de9487,
+    300: #d98273,
+    400: #d3705f,
+    500: #CF6250,
+    600: #ce5e4b,
+    700: #c84d37,
+    800: #b44531,
+    900: #a03d2c,
+    A100: #e4a69b,
+    A200: #de9487,
+    A400: #d3705f,
+    A700: #c84d37,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: white,
+        A700: white,
+    )
+);
+
+$sync1-background: (
+  status-bar: map_get($sync1-blue, 300),
+  app-bar:    map_get($sync1-blue, 100),
+  background: map_get($sync1-blue, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($sync1-blue, 50),
+  dialog:     white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $dark-focused,
+  selected-button: map_get($sync1-blue, 300),
+  selected-disabled-button: map_get($sync1-blue, 400),
+  disabled-button-toggle: map_get($sync1-blue, 200),
+  unselected-chip: map_get($sync1-blue, 300),
+  disabled-list-option: map_get($sync1-blue, 200),
+);

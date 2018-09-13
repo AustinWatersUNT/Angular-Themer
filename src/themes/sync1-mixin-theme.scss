@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+@import './sync1-theme';
+@import './_table-mixin.scss';
+
+
+@include mat-core();
+
+@mixin sync1-form-field($theme, $input-color) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  // $primary: map-get($theme, primary);
+  // $accent: map-get($theme, accent);
+   $warn: map-get($theme, warn);
+  // $foreground: map-get($theme, foreground);
+  // $background: map-get($theme, background);
+
+  $color: $input-color; // mat-color(mat-palette($warn, 700));
+
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: $color;
+  }
+
+  .mat-form-field.mat-focused {
+    .mat-form-field-ripple {
+      background-color: $color;
+    }
+  }
+
+
+}
+
+// Only 1 mixin per theme, create a mixin to combine mixins
+@mixin sync1-mixins($theme) {
+  @include sync1-form-field($theme, #247272);
+  @include table-mixin($theme, true)
+}
+
+.sync1-mixin-theme {
+  @include angular-material-theme($sync1-theme);
+  @include sync1-mixins($sync1-theme);
+}
